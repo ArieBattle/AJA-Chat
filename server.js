@@ -31,12 +31,11 @@ io.on('connection', socket => {
     socket.on('chatMessage', msg => {
         const user = getCurrentUser(socket.id);
         io.to(user.room).emit('message', messageFormat(user.username, msg));
-
+    });
     //show when cleint disconnects
     socket.on('disconnect', () => {
         io.emit('message', messageFormat(botName,  'A user has left the chat'));
     });    
-    });
 });
 const PORT = process.env.PORT || 3000;
 
