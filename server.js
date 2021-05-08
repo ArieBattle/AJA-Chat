@@ -24,7 +24,7 @@ io.on('connection', socket => {
     //show when a client connects
     socket.broadcast.to(user.room)
     .emit('message', messageFormat(botName,`${user.username} has joined the chat!`));
-    })
+    });
 
     //listen for chat message
     socket.on('chatMessage', msg => {
