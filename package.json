@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArieBattle/AJA-Chat.git"
+    "url": "git+https://github.com/avalencia17/AJA-Chat.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ArieBattle/AJA-Chat/issues"
+    "url": "https://github.com/avalencia17/AJA-Chat/issues"
   },
-  "homepage": "https://github.com/ArieBattle/AJA-Chat#readme",
+  "homepage": "https://github.com/avalencia17/AJA-Chat#readme",
   "dependencies": {
     "express": "^4.17.1",
     "moment": "^2.29.1",
