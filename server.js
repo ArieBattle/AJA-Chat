@@ -35,7 +35,10 @@ io.on('connection', socket => {
     .emit('message', messageFormat(botName,`${user.username} has joined the chat!`)
     );
     //send users and room info
-    io.to(user.room).emit('roomUsers', {room: user.room, users: getRoomUsers(user.room)});
+    io.to(user.room).emit('roomUsers', {
+        room: user.room, 
+        users: getRoomUsers(user.room)
+        });
     });
     
 
@@ -50,10 +53,14 @@ io.on('connection', socket => {
         if(user) {
             io.to(user.room)
             .emit('message', messageFormat(botName, `${user.username} has left the chat`));
-            io.to(user.room).emit('roomUsers', {room: user.room, users: getRoomUsers(user.room)});
-    
-        }   
-    });    
+
+            //send users and room info
+            io.to(user.room).emit('roomUsers', {
+                room: user.room, 
+                users: getRoomUsers(user.room)
+        });
+      }   
+   });    
 });
 const PORT = process.env.PORT || 3000;
 
