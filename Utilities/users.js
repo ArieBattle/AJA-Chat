@@ -1,4 +1,4 @@
-/*const users = [];
+const users = [];
 //join a user to chat
 function userJoin(id, username, room) {
     const user = {id, username, room};
@@ -10,7 +10,7 @@ function userJoin(id, username, room) {
 function getCurrentUser(id) {
     return users.find(user => user.id == id);
 }
-//user leaves chat
+/*//user leaves chat
 function userLeaves(id) {
     const index =  users.findIndex(user => user.id == id);
     if(index !== -1) {
@@ -20,10 +20,10 @@ function userLeaves(id) {
 //get room users
 function getRoomUsers(room) {
     return users.filter(user => user.room == room);
-}
-module.export = {
+}*/
+module.exports = {
     userJoin,
     getCurrentUser,
-    userLeaves,
-    getRoomUsers
-};*/
+    //userLeaves,
+    //getRoomUsers
+};
