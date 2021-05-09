@@ -10,6 +10,7 @@ const {username, room} = Qs.parse(location.search, {
 
 //message from server
 const socket = io();
+
 //join chatroom
 socket.emit('joinRoom', {username, room});
 
@@ -56,5 +57,5 @@ function outputRoomName(room) {
 
 //add users to DOM
 function outputUsers(users){
-    
+
 }
