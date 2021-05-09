@@ -3,7 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const messageFormat = require('./Utilities/message');
-const { userJoin, getCurrentUser } = require('./Utilities/users');
+const { userJoin, getCurrentUser, userLeaves, getRoomUsers } = require('./Utilities/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -34,7 +34,11 @@ io.on('connection', socket => {
     });
     //show when cleint disconnects
     socket.on('disconnect', () => {
-       io.emit('message', messageFormat(botName, 'A user has left the chat'));   
+        const user = userLeaves(socket.id);
+        if(user) {
+            io.to(user.room)
+            .emit('message', messageFormat(botName, `${user.username} has left the chat`));
+        }   
     });    
 });
 const PORT = process.env.PORT || 3000;
