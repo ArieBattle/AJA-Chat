@@ -1,7 +1,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
-const socketio = require('socket.io-client');
+const socketio = require('socket.io');
 const messageFormat = require('./Utilities/message');
 const { userJoin, getCurrentUser } = require('./Utilities/users');
 

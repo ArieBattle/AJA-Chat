@@ -6,7 +6,7 @@ const {username, room} = Qs.parse(location.search, {
 });
 
 //message from server
-const socket = io();
+const socket = io('https://aja-chat.herokuapp.com/');
 
 socket.emit('joinRoom', {username, room});
 socket.on('message', message => {
