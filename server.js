@@ -1,3 +1,12 @@
+//this is the startup for putting html in js file
+var div = document.createElement('div');
+div.setAttribute('class', 'someClass');
+div.innerhtml = document.getElementById('page').inner.HTML;
+document.getElementById('wrapper').style.property = new style;
+
+<script id="page" type="text/html">
+<div id="page" class="wholePage">
+
 const path = require('path');
 const http = require('http');
 const express = require('express');
@@ -36,3 +45,7 @@ io.on('connection', socket => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+</div>
+</script>
