@@ -6,7 +6,7 @@ const {username, room} = Qs.parse(location.search, {
 });
 
 //message from server
-const socket = io('http://localhost:3000/');
+const socket = io();
 
 socket.emit('joinRoom', {username, room});
 socket.on('message', message => {
