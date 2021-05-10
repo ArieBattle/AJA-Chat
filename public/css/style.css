@@ -142,6 +142,7 @@ a {
     max-width: 500px;
     margin: 80px auto;
     color: #fff;
+
 }
 
 .join-header {
@@ -150,6 +151,7 @@ a {
     background: var(--dark-color-a);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    background: #322b45;
 }
 
 .join-main {
