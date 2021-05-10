@@ -23,6 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 const botName = 'AJAchat Bot';
 //run when client connects
 io.on('connection', socket => {
+    socket.on('typing', function (data) {
+        console.log(data);
+        socket.broadcast.emit('typing', data);
+      });
+      
     socket.on('joinRoom', ({username, room}) => {
         const user = userJoin(socket.id, username, room);
         socket.join(user.room);
